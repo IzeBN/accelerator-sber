@@ -3,7 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-ENV VITE_API_URL=/api/v1
+ARG VITE_API_URL=https://api.accelerator-sber.ru/api/v1
+ENV VITE_API_URL=${VITE_API_URL}
 RUN npm run build
 
 FROM nginx:alpine
