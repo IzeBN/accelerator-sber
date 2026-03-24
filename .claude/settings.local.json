@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(node_modules/.bin/tsc --noEmit)",
+      "Bash(npm install:*)",
+      "Bash(node_modules/.bin/vite build:*)",
+      "Bash(echo \"Exit: $?\")",
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(grep -v \"//.*emoji\")",
+      "Bash(grep -rn [^x00-x7F] /c/Data/projects/acceleratorsber/frontend/src/pages /c/Data/projects/acceleratorsber/frontend/src/components --include=*.tsx)",
+      "Bash(')",
+      "Bash(\"\\\\|…\\\\|Я\\\\|а\\\\|б\\\\|в\\\\|г\\\\|д\\\\|е\\\\|ё\\\\|ж\\\\|з\\\\|и\\\\|й\\\\|к\\\\|л\\\\|м\\\\|н\\\\|о\\\\|п\\\\|р\\\\|с\\\\|т\\\\|у\\\\|ф\\\\|х\\\\|ц\\\\|ч\\\\|ш\\\\|щ\\\\|ъ\\\\|ы\\\\|ь\\\\|э\\\\|ю\\\\|ё\\\\|А\\\\|Б\\\\|В\\\\|Г\\\\|Д\\\\|Е\\\\|Ж\\\\|З\\\\|И\\\\|К\\\\|Л\\\\|М\\\\|Н\\\\|О\\\\|П\\\\|Р\\\\|С\\\\|Т\\\\|У\\\\|Ф\\\\|Х\\\\|Ц\\\\|Ч\\\\|Ш\\\\|Щ\\\\|Э\\\\|Ю\")",
+      "Bash(python3:*)",
+      "Bash(grep -Prn [x{1F000}-x{1FFFF}x{2600}-x{27BF}x{FE00}-x{FEFF}] /c/Data/projects/acceleratorsber/frontend/src/pages /c/Data/projects/acceleratorsber/frontend/src/components --include=*.tsx)",
+      "Bash(find C:Dataprojectsacceleratorsberbackend -name requirements*.txt)",
+      "Bash(grep -rn \"localhost\\\\|127\\\\.0\\\\.0\\\\.1\\\\|backend:8000\\\\|sberstart\" /c/Data/projects/acceleratorsber --include=*.yml --include=*.yaml --include=*.conf --include=*.env --include=*.ts --include=*.tsx --include=*.py --exclude-dir=node_modules --exclude-dir=__pycache__)"
+    ]
+  }
+}

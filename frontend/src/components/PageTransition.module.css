@@ -1,0 +1,14 @@
+.wrapper {
+  animation: pageIn 0.4s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

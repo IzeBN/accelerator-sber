@@ -1,0 +1,373 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  animation: pageIn 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header { }
+
+.title {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.sub {
+  font-size: 14px;
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* ===== PORTFOLIO CARD ===== */
+.portfolioCard {
+  background: linear-gradient(135deg, #0D2210 0%, #1A3A1E 40%, #0F2A12 100%) !important;
+  border: 1px solid rgba(33, 160, 56, 0.25) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolioCard::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(33, 160, 56, 0.15) 0%, transparent 70%);
+  top: -150px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.portfolioHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolioLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.portfolioValue {
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.profitBadge {
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profitPos {
+  background: rgba(33, 160, 56, 0.2);
+  color: #34C759;
+  border: 1px solid rgba(33, 160, 56, 0.3);
+}
+
+.profitNeg {
+  background: rgba(239, 68, 68, 0.15);
+  color: #FCA5A5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Investment list */
+.invList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.invRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  animation: invSlide 0.4s ease both;
+}
+
+@keyframes invSlide {
+  from { opacity: 0; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.invRow:hover {
+  background: rgba(33, 160, 56, 0.1);
+  border-color: rgba(33, 160, 56, 0.2);
+  transform: translateX(4px);
+}
+
+.invName {
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 3px;
+}
+
+.invType {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+}
+
+.invRight {
+  text-align: right;
+}
+
+.invAmount {
+  font-size: 15px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 3px;
+}
+
+.invProfit {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.invProfitPos { color: #34C759; }
+.invProfitNeg { color: #FF6B6B; }
+
+/* ===== CATALOG SECTION ===== */
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.sectionHint {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.catalogGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.catalogCard {
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catalogCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(33,160,56,0.06), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.catalogCard:hover {
+  border-color: rgba(33, 160, 56, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(33, 160, 56, 0.12);
+}
+
+.catalogCard:hover::before { opacity: 1; }
+
+.catalogCardActive {
+  border-color: #21A038 !important;
+  background: linear-gradient(135deg, rgba(33,160,56,0.08), rgba(0,208,132,0.04));
+  box-shadow: 0 8px 28px rgba(33, 160, 56, 0.18);
+}
+
+.catalogCardActive::before { opacity: 1 !important; }
+
+.catalogIcon {
+  font-size: 32px;
+}
+
+.catalogName {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.catalogDesc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.catalogReturn {
+  margin-top: auto;
+}
+
+.catalogMin {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ===== AMOUNT BUTTONS ===== */
+.hint {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.amountBtns {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.amountBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  background: var(--bg);
+  color: var(--text-secondary);
+  border: 2px solid var(--border);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.amountBtn:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(33, 160, 56, 0.06);
+}
+
+.amountBtnActive {
+  background: linear-gradient(135deg, #21A038, #00D084);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(33, 160, 56, 0.3);
+  transform: scale(1.04);
+}
+
+/* ===== FORECAST ===== */
+.forecast {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(33,160,56,0.06), rgba(0,208,132,0.03));
+  border: 1px solid rgba(33, 160, 56, 0.15);
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.forecastIcon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.forecastTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.forecastText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.forecastNote {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .catalogGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolioValue {
+    font-size: 32px;
+  }
+
+  .portfolioHeader {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .amountBtns {
+    gap: 8px;
+  }
+
+  .amountBtn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 700px) {
+  .catalogGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .catalogGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .invRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .invRight {
+    text-align: left;
+  }
+}
