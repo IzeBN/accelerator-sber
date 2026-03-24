@@ -107,7 +107,7 @@ async def run_seed(session: AsyncSession) -> None:
         target_amount=Decimal("60000.00"),
         current_amount=Decimal("23000.00"),
         strategy="round_up",
-        deadline=date(2025, 9, 1),
+        deadline=date(2026, 9, 1),
     ))
     session.add(SavingsGoal(
         user_id=student.id,
@@ -115,7 +115,7 @@ async def run_seed(session: AsyncSession) -> None:
         target_amount=Decimal("40000.00"),
         current_amount=Decimal("8500.00"),
         strategy="weekly",
-        deadline=date(2025, 7, 15),
+        deadline=date(2026, 7, 15),
     ))
 
     # Investments

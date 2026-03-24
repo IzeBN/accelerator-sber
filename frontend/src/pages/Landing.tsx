@@ -296,7 +296,7 @@ export default function Landing() {
       {/* Footer */}
       <footer className={styles.footer}>
         <div className={styles.sectionInner}>
-          <p>© 2025 СберСтарт · ПАО Сбербанк · Правила · Публичная оферта · Поддержка</p>
+          <p>© 2026 СберСтарт · ПАО Сбербанк · Правила · Публичная оферта · Поддержка</p>
         </div>
       </footer>
     </div>

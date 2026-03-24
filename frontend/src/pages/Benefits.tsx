@@ -78,7 +78,7 @@ export default function Benefits() {
           <span className={styles.primeIcon}><Star size={24} color="#21A038" /></span>
           <div style={{ flex: 1 }}>
             <div className={styles.primeTitle}>СберПрайм Студент</div>
-            <div className={styles.primeSub}>Статус: активен до 15.12.2025 · 99 ₽/мес</div>
+            <div className={styles.primeSub}>Статус: активен до 15.12.2026 · 99 ₽/мес</div>
           </div>
           <button className="btn btn-outline btn-sm" onClick={() => setShowPrimeModal(true)}>Управление</button>
         </div>
@@ -99,7 +99,7 @@ export default function Benefits() {
             <div className={styles.bonusCount}>1 240 бонусов</div>
           </div>
           <div style={{ textAlign: 'right' }}>
-            <div className={styles.bonusExpire}>500 бонусов сгорят 30.04.2026</div>
+            <div className={styles.bonusExpire}>500 бонусов сгорят 30.04.2027</div>
             <button className="btn btn-primary btn-sm" style={{ marginTop: 8 }} onClick={() => setShowBonusModal(true)}>Потратить</button>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default function Benefits() {
                   {primeActive ? 'Подписка активна' : 'Подписка отключена'}
                 </div>
                 <div style={{ fontSize: 13, color: 'var(--text-secondary)' }}>
-                  {primeActive ? 'Активна до 15.12.2025 · 99 ₽/мес' : 'Подключить за 99 ₽/мес'}
+                  {primeActive ? 'Активна до 15.12.2026 · 99 ₽/мес' : 'Подключить за 99 ₽/мес'}
                 </div>
               </div>
               <span className={`badge ${primeActive ? 'badge-green' : 'badge-gray'}`} style={{ marginLeft: 'auto' }}>
