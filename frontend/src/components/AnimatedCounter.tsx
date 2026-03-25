@@ -11,33 +11,47 @@ interface Props {
 export const AnimatedCounter = ({ end, duration = 1500, prefix = '', suffix = '', decimals = 0 }: Props) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
-  const started = useRef(false);
+  const isVisible = useRef(false);
+  const rafId = useRef<number>(0);
 
+  const runAnimation = (from: number, to: number) => {
+    cancelAnimationFrame(rafId.current);
+    const startTime = performance.now();
+    const animate = (currentTime: number) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(from + (to - from) * eased);
+      if (progress < 1) rafId.current = requestAnimationFrame(animate);
+    };
+    rafId.current = requestAnimationFrame(animate);
+  };
+
+  // Start animation when element becomes visible
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
-          started.current = true;
-          const startTime = performance.now();
-          const animate = (currentTime: number) => {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            setCount(eased * end);
-            if (progress < 1) requestAnimationFrame(animate);
-          };
-          requestAnimationFrame(animate);
+        isVisible.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          runAnimation(0, end);
         }
       },
       { threshold: 0.3 }
     );
     if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [end, duration]);
+    return () => { observer.disconnect(); cancelAnimationFrame(rafId.current); };
+  }, []);
+
+  // Re-animate when end value changes (e.g. user picks different weekly amount)
+  useEffect(() => {
+    if (isVisible.current) {
+      runAnimation(count, end);
+    }
+  }, [end]);
 
   return (
     <span ref={ref}>
-      {prefix}{count.toFixed(decimals)}{suffix}
+      {prefix}{count.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}{suffix}
     </span>
   );
 };
