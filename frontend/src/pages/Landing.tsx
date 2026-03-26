@@ -206,47 +206,47 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Comparison */}
+      {/* Pricing */}
       <section className={styles.section}>
         <div className={styles.sectionInner}>
-          <div className={styles.sectionTag}>✦ Сравнение</div>
-          <h2 className={styles.sectionTitle}>Почему СберСтарт лучше</h2>
-          <p className={styles.sectionSub}>Единственный банковский продукт с персональным финансовым наставником</p>
-          <div className={styles.compareTable}>
-            <div className={`${styles.compareCol} ${styles.compareColHighlight}`}>
-              <div className={styles.compareHeader}>
-                <GraduationCap size={18} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> СберСтарт
-              </div>
-              <ul className={styles.compareList}>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Умный наставник Степан</li>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Финансовая грамотность</li>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Инвестиции от 100 ₽</li>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Вся экосистема Сбера</li>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Кэшбэк 5%</li>
+          <div className={styles.sectionTag}>✦ СберПрайм</div>
+          <h2 className={styles.sectionTitle}>Подключи СберПрайм выгодно</h2>
+          <p className={styles.sectionSub}>Музыка, кино, доставка и кэшбэк — первый месяц всего за 1 ₽</p>
+          <div className={styles.pricingGrid}>
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingBadge}>Попробуй бесплатно</div>
+              <div className={styles.pricingPeriod}>Первый месяц</div>
+              <div className={styles.pricingPrice}>1 <span className={styles.pricingCurr}>₽</span></div>
+              <div className={styles.pricingPer}>затем 199 ₽/мес</div>
+              <ul className={styles.pricingFeatures}>
+                <li><CheckCircle2 size={14} color="#21A038" /> Okko — фильмы и сериалы</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> СберЗвук — музыка</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> СберМаркет — доставка</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> Литрес — книги</li>
               </ul>
             </div>
-            <div className={styles.compareCol}>
-              <div className={styles.compareHeader}>
-                <span>🟡</span> Т-Банк
-              </div>
-              <ul className={styles.compareList}>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Кэшбэк</li>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Скидки</li>
-                <li>❌ Нет наставника</li>
-                <li>❌ Нет обучения</li>
-                <li>❌ Нет копилки</li>
+            <div className={`${styles.pricingCard} ${styles.pricingCardHighlight}`}>
+              <div className={styles.pricingBadge}>Популярный выбор</div>
+              <div className={styles.pricingPeriod}>6 месяцев</div>
+              <div className={styles.pricingPrice}>149 <span className={styles.pricingCurr}>₽/мес</span></div>
+              <div className={styles.pricingPer}>894 ₽ единовременно · экономия 300 ₽</div>
+              <ul className={styles.pricingFeatures}>
+                <li><CheckCircle2 size={14} color="#21A038" /> Всё из базового плана</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> Повышенный кэшбэк</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> Приоритетная поддержка</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> Скидки у партнёров</li>
               </ul>
             </div>
-            <div className={styles.compareCol}>
-              <div className={styles.compareHeader}>
-                <span>🔴</span> Альфа-Банк
-              </div>
-              <ul className={styles.compareList}>
-                <li><CheckCircle2 size={14} color="#21A038" style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> Бесплатное обслуживание</li>
-                <li>❌ Нет наставника</li>
-                <li>❌ Нет обучения</li>
-                <li>❌ Нет инвестиций</li>
-                <li>❌ Нет экосистемы</li>
+            <div className={styles.pricingCard}>
+              <div className={styles.pricingBadge}>Максимальная выгода</div>
+              <div className={styles.pricingPeriod}>12 месяцев</div>
+              <div className={styles.pricingPrice}>119 <span className={styles.pricingCurr}>₽/мес</span></div>
+              <div className={styles.pricingPer}>1 428 ₽ единовременно · экономия 960 ₽</div>
+              <ul className={styles.pricingFeatures}>
+                <li><CheckCircle2 size={14} color="#21A038" /> Всё из базового плана</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> Максимальный кэшбэк</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> Приоритетная поддержка</li>
+                <li><CheckCircle2 size={14} color="#21A038" /> Эксклюзивные офферы</li>
               </ul>
             </div>
           </div>
