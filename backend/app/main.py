@@ -34,9 +34,9 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://accelerator-sber.ru",
-        "https://www.accelerator-sber.ru",
-        "https://api.accelerator-sber.ru",
+        "https://college-asu-acceselerator-project.ru",
+        "https://www.college-asu-acceselerator-project.ru",
+        "https://api.college-asu-acceselerator-project.ru",
         "http://localhost:5173",
         "http://localhost:3000",
         "http://localhost",
